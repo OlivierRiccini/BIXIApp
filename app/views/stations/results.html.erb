@@ -1,5 +1,22 @@
 <h1>Stations#results</h1>
 
-<% @stations_with_bikes.each do |station| %>
-  <p><%= station[:name] %>, <%= station[:num_bikes_available] %> <%= link_to 'Direction', station_path(station) %></p>
-<% end %>
+<div class="container-stations">
+  <div>
+    <% @stations_with_bikes.each do |station| %>
+      <div class="station" data-station_id="<%= station[:station_id] %>">
+        <p><strong>Station: </strong><%= station[:name] %>
+        <p><strong>Bikes available: </strong><%= station[:num_bikes_available] %>
+        <p><strong>Distance from your current position: </strong><%= station[:distance_from_current_position] %>
+        <%= link_to 'Direction', station_path(station) %>
+      </div>
+      <br>
+    <% end %>
+  </div>
+
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
+</div>
