@@ -11,7 +11,7 @@ class StationsController < ApplicationController
     @stations_with_bikes = []
 
     stations_status.each do |item|
-      if item['num_docks_available'] > 30
+      if item['num_docks_available'] > 40
         new_station = Station.find_by(station_id: item['station_id'])
         distance = new_station.distance_to(current_poistion)
         @stations_with_bikes << { id: new_station.id, station_id: new_station.station_id,
@@ -24,8 +24,7 @@ class StationsController < ApplicationController
         {
           lat: station[:latitude],
           lng: station[:longitude],
-          station_id: station[:station_id] #,
-            # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+          station_id: station[:station_id]
         }
       end
     end
@@ -36,5 +35,8 @@ class StationsController < ApplicationController
 
   def show
     @station = Station.find(params[:id])
+
+    @c_lat = 45.506318
+    @c_lng = -73.569021
   end
 end

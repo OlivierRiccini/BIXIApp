@@ -1,16 +1,28 @@
 // Place all the styles related to the stations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.head-results {
+  margin: 50px auto;
+  text-align: center;
+  display: inline;
+}
+
+#new-search {
+  margin-bottom: 50px;
+  display: block;
+}
+
 .container-stations {
   display: flex;
-  // flex-grow: 1;
-  // flex-basis: 0;
+}
+
+.results-list {
+  margin: 20px;
 }
 
 #map {
   flex-grow: 1;
   flex-basis: 0;
-  margin-left: 20px;
   position: sticky !important;
   top: 0;
 }
