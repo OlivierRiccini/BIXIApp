@@ -13,7 +13,4 @@ if (mapElement) {
   } else {
     map.fitLatLngBounds(markers);
   }
-
-  console.log(markers);
 }
-

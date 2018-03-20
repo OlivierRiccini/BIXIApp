@@ -1,0 +1,28 @@
+.head-results {
+  text-align: center;
+  margin: 40px;
+}
+
+.container-stations {
+  display: flex;
+}
+
+.results-list {
+  margin: 20px;
+}
+
+#map {
+  top: 0;
+  position: sticky !important;
+}
+
+#new-search {
+  display: block;
+  margin-bottom: 30px;
+  width: 145px;
+}
+
+.station:hover {
+  background-color: rgba(0,0,0,0.05);
+  cursor: pointer;
+}
