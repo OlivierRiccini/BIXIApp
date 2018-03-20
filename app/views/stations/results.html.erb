@@ -1,2 +1,5 @@
 <h1>Stations#results</h1>
-<p>Find me in app/views/stations/results.html.erb</p>
+
+<% @stations_with_bikes.each do |station| %>
+  <p><%= station[:name] %>, <%= station[:num_bikes_available] %> <%= link_to 'Direction', station_path(station) %></p>
+<% end %>
