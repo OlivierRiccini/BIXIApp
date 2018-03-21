@@ -10,7 +10,7 @@
 Station.destroy_all
 
 url = 'https://api-core.bixi.com/gbfs/en/station_information.json/'
-    response = HTTParty.get(url, :headers =>{'Content-Type' => 'application/json'})
+    response = HTTParty.get(url)
     body = JSON.parse(response.body)
     stations = body['data']['stations']
 

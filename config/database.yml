@@ -83,16 +83,3 @@ production:
   database: BIXIApp_production
   username: BIXIApp
   password: <%= ENV['BIXIAPP_DATABASE_PASSWORD'] %>
-
-
-
-development:
-  adapter: postgresql
-  host: localhost
-  username: user
-  database: app-dev
-
-
-
-
-
