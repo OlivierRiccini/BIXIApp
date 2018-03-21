@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BIXIApp</title>
     <%= csrf_meta_tags %>
 
@@ -8,7 +10,6 @@
   </head>
   <body>
     <%= yield %>
-
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
   <%= javascript_pack_tag "map" %>

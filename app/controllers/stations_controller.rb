@@ -1,5 +1,5 @@
 class StationsController < ApplicationController
-  # require 'json'
+  require 'json'
 
   def results
     # FX Innovation position
