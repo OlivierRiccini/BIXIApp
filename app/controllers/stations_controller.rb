@@ -16,7 +16,7 @@ class StationsController < ApplicationController
     @stations_with_bikes = []
 
     stations_status.each do |item|
-      if item['num_bikes_available'] == 0
+      if item['num_bikes_available'] > 0
         new_station = Station.find_by(station_id: item['station_id'])
         distance = new_station.distance_to(current_poistion)
         @stations_with_bikes << { id: new_station.id, station_id: new_station.station_id,
