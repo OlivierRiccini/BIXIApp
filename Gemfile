@@ -7,6 +7,13 @@ end
 
 gem 'httparty'
 gem 'devise'
+gem "geocoder"
+gem 'simple_form'
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+gem 'font-awesome-sass', '~> 4.7'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use postgresql as the database for Active Record

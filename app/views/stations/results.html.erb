@@ -1,5 +1,33 @@
-<h1>Stations#results</h1>
+<div class="head-results">
+  <h1>Results of your search</h1>
+</div>
+<div class="container-stations">
 
-<% @stations_with_bikes.each do |station| %>
-  <p><%= station[:name] %>, <%= station[:num_bikes_available] %> <%= link_to 'Direction', station_path(station) %></p>
-<% end %>
+  <div class="results-list">
+  <%= link_to root_path, id: 'new-search' do %>
+    <i class="fa fa-arrow-left"></i>
+    New Search
+  <% end %>
+    <% if @stations_with_bikes.empty? %>
+      <p>Sorry, there is no bikes available...</p>
+    <% else %>
+      <% @stations_with_bikes.each do |station| %>
+        <div class="station" data-station_id="<%= station[:station_id] %>">
+          <p><strong>Station: </strong><%= station[:name] %>
+          <p><strong>Bikes available: </strong><%= station[:num_bikes_available] %>
+          <p><strong>Distance from your current position: </strong><%= (station[:distance_from_current_position] * 1000).round(2) %> m
+          <%= link_to 'Direction', station_path(station) %>
+        </div>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div
+    id="map"
+    style="width: 50%;
+    height: 80vh;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
+
+</div>

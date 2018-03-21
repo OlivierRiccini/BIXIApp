@@ -15,6 +15,6 @@ url = 'https://api-core.bixi.com/gbfs/en/station_information.json/'
     stations = body['data']['stations']
 
 stations.each do |station|
-  new_station = Station.new(station_id: station['station_id'], name: station['name'], lat: station['lat'], lng: station['lon'], capacity: station['capacity'])
+  new_station = Station.new(station_id: station['station_id'], name: station['name'], latitude: station['lat'], longitude: station['lon'], capacity: station['capacity'])
   new_station.save
 end
