@@ -8,12 +8,14 @@
 }
 
 .results-list {
-  margin: 20px;
+  width: 50%;
+  padding: 20px;
 }
 
 #map {
   top: 0;
   position: sticky !important;
+  margin-right: 20px;
 }
 
 #new-search {

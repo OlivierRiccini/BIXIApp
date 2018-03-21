@@ -2,22 +2,9 @@
 <h2><%= @station.address %></h2>
 
 
-<script>
-
-  const s_lat = <%= @station.latitude %>
-  const s_lng = <%= @station.longitude %>
-
-
-  fetch("https://maps.googleapis.com/maps/api/directions/json?origin=${<%= @c_lat %>}, ${<%= @c_lng %>}&destination=${s_lat}, ${s_lat}&key=AIzaSyDD_EgPpd1bWG1tF2g8GDu1HJjk1-8jSqY")
-  .then(response => response.json())
-  .then((data) => {
-    console.log(data);
-    // data.results.forEach((person) => {
-    //   const item = `<li>${person.name}</li>`;
-    //   people.insertAdjacentHTML("beforeend", item);
-    // });
-  });
-
-</script>
-
-
+ <div
+    id="map2"
+    style="width: 50%;
+    height: 80vh;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
