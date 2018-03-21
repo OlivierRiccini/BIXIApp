@@ -1,10 +1,4 @@
 <h1><%= @station.name %></h1>
-<h2><%= @station.address %></h2>
-
-
- <div
-    id="map2"
-    style="width: 50%;
-    height: 80vh;"
-    data-markers="<%= @markers.to_json %>"
-  ></div>
+<h4><%= @station.address %></h4>
+<p><%= @station.num_bikes_available %></p>
+<p><%= @station.distance_from_current_position %></p>
