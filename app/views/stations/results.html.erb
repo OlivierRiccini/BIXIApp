@@ -12,12 +12,14 @@
       <p>Sorry, there is no bikes available...</p>
     <% else %>
       <% @stations_with_bikes.each do |station| %>
-        <div class="station" data-station_id="<%= station[:station_id] %>">
-          <p><strong>Station: </strong><%= station[:name] %>
-          <p><strong>Bikes available: </strong><%= station[:num_bikes_available] %>
-          <p><strong>Distance from your current position: </strong><%= (station[:distance_from_current_position] * 1000).round(2) %> m
-          <%= link_to 'Direction', station_path(station) %>
-        </div>
+        <%= link_to station_path(station) do %>
+          <div class="station" data-station_id="<%= station[:station_id] %>">
+            <p><strong>Station: </strong><%= station[:name] %>
+            <p><strong>Address: </strong><%= station[:address] %>
+            <p><strong>Bikes available: </strong><%= station[:num_bikes_available] %>
+            <p><strong>Distance from your current position: </strong><%= (station[:distance_from_current_position] * 1000).round(2) %> m
+          </div>
+        <% end %>
         <br>
       <% end %>
     <% end %>

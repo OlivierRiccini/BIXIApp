@@ -5,6 +5,10 @@
 
 .container-stations {
   display: flex;
+  a {
+    color: rgb(50,50,50);
+    text-decoration: none;
+  }
 }
 
 .results-list {

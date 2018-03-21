@@ -42,7 +42,6 @@ class StationsController < ApplicationController
 
   def show
     @station = Station.find(params[:id])
-
     @c_lat = 45.506318
     @c_lng = -73.569021
   end
